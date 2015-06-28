@@ -13,7 +13,7 @@ var requestAnimFrame = requestAnimationFrame;
 
 function up1() {
   return Phoria.Entity.create({
-    points: [ {x:1.0, y:0.0, z:0.0}]);
+    points: [ {x:1.0, y:0.0, z:0.0}]
   });
 }
 

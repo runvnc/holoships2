@@ -70,7 +70,7 @@ function onloadHandler()
        var rot = up1();
        var up = scene.camera.up;
        rot.rotateX(event.alpha*Phoria.DEGREES);
-       rot.rotateY(event.beta*Poria.DEGREES);
+       rot.rotateY(event.beta*Phoria.DEGREES);
        rot.rotateZ(event.gamma*Phoria.DEGREES);
        up.x = rot.points.x;
        up.y = rot.points.y; 

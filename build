@@ -1,0 +1,2 @@
+#!/bin/bash
+cat scripts/phoria.min.js prog.js >main.js

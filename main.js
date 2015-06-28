@@ -59,6 +59,14 @@ function onloadHandler()
    scene.graph.push(cube);
    scene.graph.push(new Phoria.DistantLight());
 
+   window.addEventListener('deviceorientation',
+     function(event) {
+       var up = scene.camera.up; 
+       up.x = event.alpha; 
+       up.y = event.beta; 
+       up.z = event.gamma;
+   }, false);
+
    var pause = false;
    var fnAnimate = function() {
       if (!pause)

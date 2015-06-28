@@ -14,6 +14,12 @@ document.body.appendChild(canv);
 var requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || function(c) {window.setTimeout(c, 15)};
 var requestAnimFrame = requestAnimationFrame;
 
+function up1() {
+  return Phoria.Entity.create({
+    points: [ {x:1.0, y:0.0, z:0.0}]);
+  });
+}
+
 function onloadHandler()
 {
    // get the canvas DOM element and the 2D drawing context
@@ -61,10 +67,14 @@ function onloadHandler()
 
    window.addEventListener('deviceorientation',
      function(event) {
-       var up = scene.camera.up; 
-       up.x = event.alpha; 
-       up.y = event.beta; 
-       up.z = event.gamma;
+       var rot = up1();
+       var up = scene.camera.up;
+       rot.rotateX(event.alpha*Phoria.DEGREES);
+       rot.rotateY(event.beta*Poria.DEGREES);
+       rot.rotateZ(event.gamma*Phoria.DEGREES);
+       up.x = rot.points.x;
+       up.y = rot.points.y; 
+       up.z = rot.points.z;
    }, false);
 
    var pause = false;

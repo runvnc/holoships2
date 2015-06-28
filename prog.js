@@ -66,7 +66,7 @@ function onloadHandler()
      function(event) {
        var rot = up1();
        var up = scene.camera.up;
-       var ratio = 0.01745;
+       var ratio = 0.1745;
        rot.rotateX(event.alpha*ratio);
        rot.rotateY(event.beta*ratio);
        rot.rotateZ(event.gamma*ratio);

@@ -16,7 +16,7 @@ var requestAnimFrame = requestAnimationFrame;
 
 function up1() {
   return Phoria.Entity.create({
-    points: [ {x:1.0, y:0.0, z:0.0}]
+    points: [ {x:0.0, y:0.0, z:1.0}]
   });
 }
 
@@ -69,9 +69,10 @@ function onloadHandler()
      function(event) {
        var rot = up1();
        var up = scene.camera.up;
-       rot.rotateX(event.alpha);
-       rot.rotateY(event.beta);
-       rot.rotateZ(event.gamma);
+       var ratio = 0.01745;
+       rot.rotateX(event.alpha*ratio);
+       rot.rotateY(event.beta*ratio);
+       rot.rotateZ(event.gamma*ratio);
        up.x = rot.points.x;
        up.y = rot.points.y; 
        up.z = rot.points.z;

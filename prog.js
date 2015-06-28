@@ -70,9 +70,9 @@ function onloadHandler()
        rot.rotateX(event.alpha*ratio);
        rot.rotateY(event.beta*ratio);
        rot.rotateZ(event.gamma*ratio);
-       up.x = rot.points.x;
-       up.y = rot.points.y; 
-       up.z = rot.points.z;
+       up.x = rot.points[0].x;
+       up.y = rot.points[0].y; 
+       up.z = rot.points[0].z;
    }, false);
 
    var pause = false;

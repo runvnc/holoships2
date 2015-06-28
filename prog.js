@@ -58,6 +58,7 @@ function onloadHandler()
 
    window.addEventListener('deviceorientation',
      function(event) {
+       pause = true;
        var up = scene.camera.up; 
        up.x = event.alpha; 
        up.y = event.beta; 
